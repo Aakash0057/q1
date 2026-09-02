@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Executing the Basic Python Application...'
-                sh 'python3 app.py'
+                echo 'Executing the Basic Python Application on Windows...'
+                bat 'python app.py'
             }
         }
     }
