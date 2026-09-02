@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // This checks out the code from your GitHub repository automatically
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Executing the Basic Python Application...'
+                // Simply call python followed by the script and numbers
+                bat 'python sum.py 10 20'
+            }
+        }
+    }
+}
