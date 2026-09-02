@@ -1,16 +1,17 @@
 pipeline {
     agent any
+    environment {
+        PATH = "C:\\Users\\MADHAN\\AppData\\Local\\Programs\\Python\\Python312;${env.PATH}"
+    }
     stages {
         stage('Checkout Code') {
             steps {
-                // This checks out the code from your GitHub repository automatically
                 checkout scm
             }
         }
         stage('Build') {
             steps {
-                echo 'Executing the Basic Python Application...'
-                // Simply call python followed by the script and numbers
+                echo 'Executing Python Sum Program...'
                 bat 'python sum.py 10 20'
             }
         }
