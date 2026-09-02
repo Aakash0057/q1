@@ -6,13 +6,13 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/Aakash0057/Q1_Python_Sum.git'
             }
         }
         stage('Build') {
             steps {
-                echo 'Executing Python Sum Program...'
-                bat 'python sum.py 10 20'
+                echo 'Executing Python Sum Program via Clean Environment Variables...'
+                bat 'python sum.py'
             }
         }
     }
